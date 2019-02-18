@@ -47,7 +47,7 @@
 <meta property="og:site_name" content="ThinkGo">
 <meta property="og:description" content="Welcome to the ThinkGo documentation. If you encounter any problems when using ThinkGo, have a look at the  troubleshooting guide, raise an issue on GitHub. What is ThinkGo?ThinkGo is a fast, simple a">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-02-18T07:22:31.523Z">
+<meta property="og:updated_time" content="2019-02-18T10:48:24.533Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Documentation">
 <meta name="twitter:description" content="Welcome to the ThinkGo documentation. If you encounter any problems when using ThinkGo, have a look at the  troubleshooting guide, raise an issue on GitHub. What is ThinkGo?ThinkGo is a fast, simple a">
@@ -58,7 +58,7 @@
     <header id="header" class="wrapper">
   <div id="header-inner" class="inner">
     <h1 id="logo-wrap">
-      <a href="/zh-cn/" id="logo">Hexo</a>
+      <a href="/zh-cn/" id="logo">ThinkGo</a>
     </h1>
     <nav id="main-nav">
       <a href="/zh-cn/docs/" class="main-nav-link">文档</a><a href="/news/" class="main-nav-link">新闻</a>
@@ -91,19 +91,19 @@
             <div class="inner">
               <header class="article-header">
                 <h1 class="article-title" itemprop="name">Documentation</h1>
-                <a href="https://github.com/thinkoner.github.io/edit/master/source/zh-cn/docs/index.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i></a>
+                <a href="https://github.com/thinkoner/thinkgo-site/edit/master/source/zh-cn/docs/index.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i></a>
               </header>
               <div class="article-content" itemprop="articleBody">
                 <p>Welcome to the ThinkGo documentation. If you encounter any problems when using ThinkGo, have a look at the  <a href="troubleshooting.html">troubleshooting guide</a>, raise an issue on <a href="https://github.com/thinkoner/thinkgo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
 <h2 id="What-is-ThinkGo" class="article-heading"><a href="#What-is-ThinkGo" class="headerlink" title="What is ThinkGo?"></a>What is ThinkGo?<a class="article-anchor" href="#What-is-ThinkGo" aria-hidden="true"></a></h2><p>ThinkGo is a fast, simple and powerful web framework written in Go (Golang). That currently supports the basic functionality of web frameworks such as routing, middleware, controllers, requests, responses, sessions, views, logs, caching, ORM, and ThinkGo is committed to making code simple. And expressive, helping developers quickly build a web application.</p>
 <h2 id="Installation" class="article-heading"><a href="#Installation" class="headerlink" title="Installation"></a>Installation<a class="article-anchor" href="#Installation" aria-hidden="true"></a></h2><p>The only requirement is the <a href="https://golang.org/dl/" target="_blank" rel="noopener">Go Programming Language</a>. If you encounter a problem and can’t find the solution here, please <a href="https://github.com/thinkoner/thinkgo/issues" target="_blank" rel="noopener">submit a GitHub issue</a> and I’ll try to solve it.</p>
-<p>Just install Hexo with <code>go get</code>:</p>
+<p>Just install ThinkGo with <code>go get</code>:</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ go get github.com/thinkoner/thinkgo</span><br></pre></td></tr></table></figure>
 <h2 id="Quick-start" class="article-heading"><a href="#Quick-start" class="headerlink" title="Quick start"></a>Quick start<a class="article-anchor" href="#Quick-start" aria-hidden="true"></a></h2><p>ThinkGo is installed, Start a project quickly:</p>
 <figure class="highlight golang"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">  <span class="string">"github.com/thinkoner/thinkgo"</span></span><br><span class="line">  <span class="string">"fmt"</span></span><br><span class="line">  <span class="string">"github.com/thinkoner/thinkgo/router"</span></span><br><span class="line">  <span class="string">"github.com/thinkoner/thinkgo/context"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">  app := thinkgo.BootStrap()</span><br><span class="line">  app.RegisterRoute(<span class="function"><span class="keyword">func</span><span class="params">(route *router.Route)</span></span> &#123;</span><br><span class="line"></span><br><span class="line">    route.Get(<span class="string">"/"</span>, <span class="function"><span class="keyword">func</span><span class="params">(req *context.Request)</span> *<span class="title">context</span>.<span class="title">Response</span></span> &#123;</span><br><span class="line">      <span class="keyword">return</span> thinkgo.Text(<span class="string">"Hello ThinkGo !"</span>)</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    route.Get(<span class="string">"/ping"</span>, <span class="function"><span class="keyword">func</span><span class="params">(req *context.Request)</span> *<span class="title">context</span>.<span class="title">Response</span></span> &#123;</span><br><span class="line">      <span class="keyword">return</span> thinkgo.Json(<span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">string</span>&#123;</span><br><span class="line">        <span class="string">"message"</span>: <span class="string">"pong"</span>,</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Dependency injection</span></span><br><span class="line">    route.Get(<span class="string">"/user/&#123;name&#125;"</span>, <span class="function"><span class="keyword">func</span><span class="params">(req *context.Request, name <span class="keyword">string</span>)</span> *<span class="title">context</span>.<span class="title">Response</span></span> &#123;</span><br><span class="line">      <span class="keyword">return</span> thinkgo.Text(fmt.Sprintf(<span class="string">"Hello %s !"</span>, name))</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="comment">// listen and serve on 0.0.0.0:9011</span></span><br><span class="line">  app.Run()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2019-02-18T07:22:31.523Z" itemprop="dateModified">上次更新：2019-02-18</time>
+                <time class="article-footer-updated" datetime="2019-02-18T10:48:24.533Z" itemprop="dateModified">上次更新：2019-02-18</time>
                 <a href="routing.html" class="article-footer-next" title="路由"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               

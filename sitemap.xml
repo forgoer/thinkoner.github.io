@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://thinkoner.github.io/zh-cn/docs/index.html</loc>
+    
+    <lastmod>2019-02-18T10:48:24.533Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://thinkoner.github.io/docs/index.html</loc>
+    
+    <lastmod>2019-02-18T10:48:16.946Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://thinkoner.github.io/zh-cn/index.html</loc>
     
     <lastmod>2019-02-18T09:32:27.499Z</lastmod>
@@ -44,13 +58,6 @@
   </url>
   
   <url>
-    <loc>https://thinkoner.github.io/docs/http-session.html</loc>
-    
-    <lastmod>2019-02-18T07:52:09.374Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://thinkoner.github.io/zh-cn/docs/http-session.html</loc>
     
     <lastmod>2019-02-18T07:52:09.374Z</lastmod>
@@ -58,14 +65,21 @@
   </url>
   
   <url>
-    <loc>https://thinkoner.github.io/zh-cn/docs/contributing.html</loc>
+    <loc>https://thinkoner.github.io/docs/http-session.html</loc>
+    
+    <lastmod>2019-02-18T07:52:09.374Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://thinkoner.github.io/docs/contributing.html</loc>
     
     <lastmod>2019-02-18T07:51:41.231Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://thinkoner.github.io/docs/contributing.html</loc>
+    <loc>https://thinkoner.github.io/zh-cn/docs/contributing.html</loc>
     
     <lastmod>2019-02-18T07:51:41.231Z</lastmod>
     
@@ -86,14 +100,14 @@
   </url>
   
   <url>
-    <loc>https://thinkoner.github.io/zh-cn/docs/logging.html</loc>
+    <loc>https://thinkoner.github.io/docs/logging.html</loc>
     
     <lastmod>2019-02-18T07:39:01.231Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://thinkoner.github.io/docs/logging.html</loc>
+    <loc>https://thinkoner.github.io/zh-cn/docs/logging.html</loc>
     
     <lastmod>2019-02-18T07:39:01.231Z</lastmod>
     
@@ -114,13 +128,6 @@
   </url>
   
   <url>
-    <loc>https://thinkoner.github.io/docs/http-response.html</loc>
-    
-    <lastmod>2019-02-18T07:34:10.676Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://thinkoner.github.io/zh-cn/docs/http-response.html</loc>
     
     <lastmod>2019-02-18T07:34:10.676Z</lastmod>
@@ -128,14 +135,21 @@
   </url>
   
   <url>
-    <loc>https://thinkoner.github.io/docs/http-request.html</loc>
+    <loc>https://thinkoner.github.io/docs/http-response.html</loc>
+    
+    <lastmod>2019-02-18T07:34:10.676Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://thinkoner.github.io/zh-cn/docs/http-request.html</loc>
     
     <lastmod>2019-02-18T07:32:38.277Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://thinkoner.github.io/zh-cn/docs/http-request.html</loc>
+    <loc>https://thinkoner.github.io/docs/http-request.html</loc>
     
     <lastmod>2019-02-18T07:32:38.277Z</lastmod>
     
@@ -156,13 +170,6 @@
   </url>
   
   <url>
-    <loc>https://thinkoner.github.io/zh-cn/docs/middleware.html</loc>
-    
-    <lastmod>2019-02-18T07:26:54.732Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://thinkoner.github.io/docs/middleware.html</loc>
     
     <lastmod>2019-02-18T07:26:54.732Z</lastmod>
@@ -170,9 +177,9 @@
   </url>
   
   <url>
-    <loc>https://thinkoner.github.io/docs/routing.html</loc>
+    <loc>https://thinkoner.github.io/zh-cn/docs/middleware.html</loc>
     
-    <lastmod>2019-02-18T07:25:10.084Z</lastmod>
+    <lastmod>2019-02-18T07:26:54.732Z</lastmod>
     
   </url>
   
@@ -184,16 +191,9 @@
   </url>
   
   <url>
-    <loc>https://thinkoner.github.io/docs/index.html</loc>
+    <loc>https://thinkoner.github.io/docs/routing.html</loc>
     
-    <lastmod>2019-02-18T07:22:31.523Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://thinkoner.github.io/zh-cn/docs/index.html</loc>
-    
-    <lastmod>2019-02-18T07:22:31.523Z</lastmod>
+    <lastmod>2019-02-18T07:25:10.084Z</lastmod>
     
   </url>
   
