@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <title>Routing | ThinkGo</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://thinkoner.github.io/zh-cn/docs/routing.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://thinkoner.github.io/docs/routing.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://thinkoner.github.io/zh-cn/docs/routing.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">  
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="ThinkGo">
+  <!-- Open Graph -->
+  <meta name="description" content="Basic RoutingThe most basic routes accept a URI and a Closure, providing a very simple and expressive method of defining routes: app.RegisterRoute(func(route *router.Route) &amp;#123;	route.Get(&quot;/foo&quot;, fu">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Routing">
+<meta property="og:url" content="https://thinkoner.github.io/zh-cn/docs/routing.html">
+<meta property="og:site_name" content="ThinkGo">
+<meta property="og:description" content="Basic RoutingThe most basic routes accept a URI and a Closure, providing a very simple and expressive method of defining routes: app.RegisterRoute(func(route *router.Route) &amp;#123;	route.Get(&quot;/foo&quot;, fu">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2019-02-18T07:25:10.084Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Routing">
+<meta name="twitter:description" content="Basic RoutingThe most basic routes accept a URI and a Closure, providing a very simple and expressive method of defining routes: app.RegisterRoute(func(route *router.Route) &amp;#123;	route.Get(&quot;/foo&quot;, fu">
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/zh-cn/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/zh-cn/docs/" class="main-nav-link">文档</a><a href="/news/" class="main-nav-link">新闻</a>
+      <a href="https://github.com/thinkoner/thinkgo" class="main-nav-link"><i class="fa fa-github-alt"></i></a>      
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="docs/routing.html">
+        
+          <option value="en">English</option>
+        
+          <option value="zh-cn" selected>简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Routing</h1>
+                <a href="https://github.com/thinkoner.github.io/edit/master/source/zh-cn/docs/routing.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h4 id="Basic-Routing" class="article-heading"><a href="#Basic-Routing" class="headerlink" title="Basic Routing"></a>Basic Routing<a class="article-anchor" href="#Basic-Routing" aria-hidden="true"></a></h4><p>The most basic routes accept a URI and a Closure, providing a very simple and expressive method of defining routes:</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">app.RegisterRoute(<span class="function"><span class="keyword">func</span><span class="params">(route *router.Route)</span></span> &#123;</span><br><span class="line">	route.Get(<span class="string">"/foo"</span>, <span class="function"><span class="keyword">func</span><span class="params">(req *context.Request)</span> *<span class="title">context</span>.<span class="title">Response</span></span> &#123;</span><br><span class="line">		<span class="keyword">return</span> thinkgo.Text(<span class="string">"Hello ThinkGo !"</span>)</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="Available-Router-Methods" class="article-heading"><a href="#Available-Router-Methods" class="headerlink" title="Available Router Methods"></a>Available Router Methods<a class="article-anchor" href="#Available-Router-Methods" aria-hidden="true"></a></h4><p>The router allows you to register routes that respond to any HTTP verb:</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">route.Get(<span class="string">"/someGet"</span>, getting)</span><br><span class="line">route.Post(<span class="string">"/somePost"</span>, posting)</span><br><span class="line">route.Put(<span class="string">"/somePut"</span>, putting)</span><br><span class="line">route.Delete(<span class="string">"/someDelete"</span>, deleting)</span><br><span class="line">route.Patch(<span class="string">"/somePatch"</span>, patching)</span><br><span class="line">route.Options(<span class="string">"/someOptions"</span>, options)</span><br></pre></td></tr></table></figure>
+<p>Sometimes you may need to register a route that responds to multiple HTTP verbs. You may even register a route that responds to all HTTP verbs using the <code>Any</code> method:</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">route.Any(<span class="string">"/someAny"</span>, any)</span><br></pre></td></tr></table></figure>
+<h4 id="Parameters-in-path" class="article-heading"><a href="#Parameters-in-path" class="headerlink" title="Parameters in path"></a>Parameters in path<a class="article-anchor" href="#Parameters-in-path" aria-hidden="true"></a></h4><p>Of course, sometimes you will need to capture segments of the URI within your route. For example, you may need to capture a user’s ID from the URL. You may do so by defining route parameters:</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">route.Get(<span class="string">"/user/&#123;id&#125;"</span>, <span class="function"><span class="keyword">func</span><span class="params">(req *context.Request, id <span class="keyword">string</span>)</span> *<span class="title">context</span>.<span class="title">Response</span></span> &#123;</span><br><span class="line">	<span class="keyword">return</span> thinkgo.Text(fmt.Sprintf(<span class="string">"User %s"</span>, id))</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>You may define as many route parameters as required by your route:</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">route.Get(<span class="string">"/posts/&#123;post&#125;/comments/&#123;comment&#125;"</span>, <span class="function"><span class="keyword">func</span><span class="params">(req *context.Request, postId, commentId <span class="keyword">string</span>)</span> *<span class="title">context</span>.<span class="title">Response</span></span> &#123;</span><br><span class="line">	<span class="comment">//</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="Route-Prefixes" class="article-heading"><a href="#Route-Prefixes" class="headerlink" title="Route Prefixes"></a>Route Prefixes<a class="article-anchor" href="#Route-Prefixes" aria-hidden="true"></a></h4><p>The prefix method may be used to prefix each route in the group with a given URI. For example, you may want to prefix all route URIs within the group with <code>admin</code>:</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">route.Prefix(<span class="string">"/admin"</span>).Group(<span class="function"><span class="keyword">func</span><span class="params">(group *router.Route)</span></span> &#123;</span><br><span class="line">	group.Prefix(<span class="string">"user"</span>).Group(<span class="function"><span class="keyword">func</span><span class="params">(group *router.Route)</span></span> &#123;</span><br><span class="line">	    <span class="comment">// ... 	</span></span><br><span class="line">	&#125;)</span><br><span class="line">	group.Prefix(<span class="string">"posts"</span>).Group(<span class="function"><span class="keyword">func</span><span class="params">(group *router.Route)</span></span> &#123;</span><br><span class="line">		<span class="comment">// ... 	</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="Route-Groups" class="article-heading"><a href="#Route-Groups" class="headerlink" title="Route Groups"></a>Route Groups<a class="article-anchor" href="#Route-Groups" aria-hidden="true"></a></h4><p>Route groups allow you to share route attributes, such as middleware or prefix, across a large number of routes without needing to define those attributes on each individual route.</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">route.Prefix(<span class="string">"/admin"</span>).Group(<span class="function"><span class="keyword">func</span><span class="params">(group *router.Route)</span></span> &#123;</span><br><span class="line">	group.Prefix(<span class="string">"user"</span>).Group(<span class="function"><span class="keyword">func</span><span class="params">(group *router.Route)</span></span> &#123;</span><br><span class="line">		group.Get(<span class="string">""</span>, <span class="function"><span class="keyword">func</span><span class="params">(request *context.Request)</span> *<span class="title">context</span>.<span class="title">Response</span></span> &#123;</span><br><span class="line">			<span class="keyword">return</span> thinkgo.Text(<span class="string">"admin user !"</span>)</span><br><span class="line">		&#125;).Middleware(<span class="function"><span class="keyword">func</span><span class="params">(request *context.Request, next router.Closure)</span> <span class="title">interface</span></span>&#123;&#125; &#123;</span><br><span class="line">			<span class="keyword">if</span> _, err := request.Input(<span class="string">"id"</span>); err != <span class="literal">nil</span> &#123;</span><br><span class="line">				<span class="keyword">return</span> thinkgo.Text(<span class="string">"Invalid parameters"</span>)</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">return</span> next(request)</span><br><span class="line">		&#125;)</span><br><span class="line">		group.Get(<span class="string">"edit"</span>, <span class="function"><span class="keyword">func</span><span class="params">(request *context.Request)</span> *<span class="title">context</span>.<span class="title">Response</span></span> &#123;</span><br><span class="line">			<span class="keyword">return</span> thinkgo.Text(<span class="string">"admin user edit !"</span>)</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;).Middleware(<span class="function"><span class="keyword">func</span><span class="params">(request *context.Request, next router.Closure)</span> <span class="title">interface</span></span>&#123;&#125; &#123;</span><br><span class="line">		<span class="keyword">if</span> _, err := request.Input(<span class="string">"user"</span>); err != <span class="literal">nil</span> &#123;</span><br><span class="line">			<span class="keyword">return</span> thinkgo.Text(<span class="string">"Invalid parameters"</span>)</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> next(request)</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;).Middleware(<span class="function"><span class="keyword">func</span><span class="params">(request *context.Request, next router.Closure)</span> <span class="title">interface</span></span>&#123;&#125; &#123;</span><br><span class="line">	<span class="keyword">if</span> _, err := request.Input(<span class="string">"token"</span>); err != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> thinkgo.Text(<span class="string">"Invalid parameters"</span>)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> next(request)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2019-02-18T07:25:10.084Z" itemprop="dateModified">上次更新：2019-02-18</time>
+                <a href="index.html" class="article-footer-prev" title="概述"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="middleware.html" class="article-footer-next" title="中间件"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">              
+              <strong class="sidebar-title">目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Basic-Routing"><span class="toc-text">Basic Routing</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Available-Router-Methods"><span class="toc-text">Available Router Methods</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Parameters-in-path"><span class="toc-text">Parameters in path</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Route-Prefixes"><span class="toc-text">Route Prefixes</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Route-Groups"><span class="toc-text">Route Groups</span></a></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">开始使用</strong><a href="index.html" class="sidebar-link">概述</a><strong class="sidebar-title">基础功能</strong><a href="routing.html" class="sidebar-link current">路由</a><a href="middleware.html" class="sidebar-link">中间件</a><a href="controller.html" class="sidebar-link">控制器</a><a href="http-request.html" class="sidebar-link">请求</a><a href="http-response.html" class="sidebar-link">响应</a><strong class="sidebar-title">前端开发</strong><a href="view.html" class="sidebar-link">视图</a><strong class="sidebar-title">综合话题</strong><a href="http-session.html" class="sidebar-link">Session</a><a href="logging.html" class="sidebar-link">日志</a><a href="cache.html" class="sidebar-link">缓存</a><strong class="sidebar-title">其他</strong><a href="contributing.html" class="sidebar-link">Contributing</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2019 <a href="https://github.com/thinkoner/thinkgo/graphs/contributors" target="_blank">TechLee</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://github.com/thinkoner/thinkgo" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/zh-cn/docs/" class="mobile-nav-link">文档</a><a href="/news/" class="mobile-nav-link">新闻</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/thinkoner/thinkgo" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">开始使用</strong><a href="index.html" class="mobile-nav-link">概述</a><strong class="mobile-nav-title">基础功能</strong><a href="routing.html" class="mobile-nav-link current">路由</a><a href="middleware.html" class="mobile-nav-link">中间件</a><a href="controller.html" class="mobile-nav-link">控制器</a><a href="http-request.html" class="mobile-nav-link">请求</a><a href="http-response.html" class="mobile-nav-link">响应</a><strong class="mobile-nav-title">前端开发</strong><a href="view.html" class="mobile-nav-link">视图</a><strong class="mobile-nav-title">综合话题</strong><a href="http-session.html" class="mobile-nav-link">Session</a><a href="logging.html" class="mobile-nav-link">日志</a><a href="cache.html" class="mobile-nav-link">缓存</a><strong class="mobile-nav-title">其他</strong><a href="contributing.html" class="mobile-nav-link">Contributing</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/routing.html">
+      
+        <option value="en">English</option>
+      
+        <option value="zh-cn" selected>简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- Cookie -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.min.js"></script>
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+</body>
+</html>

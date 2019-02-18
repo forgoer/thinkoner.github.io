@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <title>Logging | ThinkGo</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://thinkoner.github.io/docs/logging.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://thinkoner.github.io/docs/logging.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://thinkoner.github.io/zh-cn/docs/logging.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">  
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="ThinkGo">
+  <!-- Open Graph -->
+  <meta name="description" content="The logger provides the eight logging levels defined in RFC 5424: emergency, alert, critical, error, warning, notice, info and debug. import &quot;github.com/thinkoner/thinkgo/log&quot;log.Debug(&quot;log with Debug">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Logging">
+<meta property="og:url" content="https://thinkoner.github.io/docs/logging.html">
+<meta property="og:site_name" content="ThinkGo">
+<meta property="og:description" content="The logger provides the eight logging levels defined in RFC 5424: emergency, alert, critical, error, warning, notice, info and debug. import &quot;github.com/thinkoner/thinkgo/log&quot;log.Debug(&quot;log with Debug">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-02-18T07:39:01.231Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Logging">
+<meta name="twitter:description" content="The logger provides the eight logging levels defined in RFC 5424: emergency, alert, critical, error, warning, notice, info and debug. import &quot;github.com/thinkoner/thinkgo/log&quot;log.Debug(&quot;log with Debug">
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/docs/" class="main-nav-link">Docs</a><a href="/news/" class="main-nav-link">News</a>
+      <a href="https://github.com/thinkoner/thinkgo" class="main-nav-link"><i class="fa fa-github-alt"></i></a>      
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical="docs/logging.html">
+        
+          <option value="en" selected>English</option>
+        
+          <option value="zh-cn">简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Logging</h1>
+                <a href="https://github.com/thinkoner.github.io/edit/master/source/docs/logging.md" class="article-edit-link" title="Improve this doc"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <p>The logger provides the eight logging levels defined in <a href="https://tools.ietf.org/html/rfc5424" target="_blank" rel="noopener">RFC 5424</a>: <strong>emergency</strong>, <strong>alert</strong>, <strong>critical</strong>, <strong>error</strong>, <strong>warning</strong>, <strong>notice</strong>, <strong>info</strong> and <strong>debug</strong>.</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">"github.com/thinkoner/thinkgo/log"</span></span><br><span class="line"></span><br><span class="line">log.Debug(<span class="string">"log with Debug"</span>)</span><br><span class="line">log.Info(<span class="string">"log with Info"</span>)</span><br><span class="line">log.Notice(<span class="string">"log with Notice"</span>)</span><br><span class="line">log.Warn(<span class="string">"log with Warn"</span>)</span><br><span class="line">log.Error(<span class="string">"log with Error"</span>)</span><br><span class="line">log.Crit(<span class="string">"log with Crit"</span>)</span><br><span class="line">log.Alert(<span class="string">"log with Alert"</span>)</span><br><span class="line">log.Emerg(<span class="string">"log with Emerg"</span>)</span><br></pre></td></tr></table></figure>
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2019-02-18T07:39:01.231Z" itemprop="dateModified">Last updated: 2019-02-18</time>
+                <a href="http-session.html" class="article-footer-prev" title="HTTP-Session"><i class="fa fa-chevron-left"></i><span>Prev</span></a><a href="cache.html" class="article-footer-next" title="Cache"><span>Next</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">              
+              <strong class="sidebar-title">Contents</strong>
+              
+              <a href="#" id="article-toc-top">Back to Top</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">Getting Started</strong><a href="index.html" class="sidebar-link">Overview</a><strong class="sidebar-title">Basic Usage</strong><a href="routing.html" class="sidebar-link">Routing</a><a href="middleware.html" class="sidebar-link">Middleware</a><a href="controller.html" class="sidebar-link">Controller</a><a href="http-request.html" class="sidebar-link">HTTP Request</a><a href="http-response.html" class="sidebar-link">HTTP Response</a><strong class="sidebar-title">Frontend</strong><a href="view.html" class="sidebar-link">View</a><strong class="sidebar-title">Digging Deeper</strong><a href="http-session.html" class="sidebar-link">HTTP-Session</a><a href="logging.html" class="sidebar-link current">Logging</a><a href="cache.html" class="sidebar-link">Cache</a><strong class="sidebar-title">Others</strong><a href="contributing.html" class="sidebar-link">Contributing</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2019 <a href="https://github.com/thinkoner/thinkgo/graphs/contributors" target="_blank">TechLee</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://github.com/thinkoner/thinkgo" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/docs/" class="mobile-nav-link">Docs</a><a href="/news/" class="mobile-nav-link">News</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/thinkoner/thinkgo" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Getting Started</strong><a href="index.html" class="mobile-nav-link">Overview</a><strong class="mobile-nav-title">Basic Usage</strong><a href="routing.html" class="mobile-nav-link">Routing</a><a href="middleware.html" class="mobile-nav-link">Middleware</a><a href="controller.html" class="mobile-nav-link">Controller</a><a href="http-request.html" class="mobile-nav-link">HTTP Request</a><a href="http-response.html" class="mobile-nav-link">HTTP Response</a><strong class="mobile-nav-title">Frontend</strong><a href="view.html" class="mobile-nav-link">View</a><strong class="mobile-nav-title">Digging Deeper</strong><a href="http-session.html" class="mobile-nav-link">HTTP-Session</a><a href="logging.html" class="mobile-nav-link current">Logging</a><a href="cache.html" class="mobile-nav-link">Cache</a><strong class="mobile-nav-title">Others</strong><a href="contributing.html" class="mobile-nav-link">Contributing</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/logging.html">
+      
+        <option value="en" selected>English</option>
+      
+        <option value="zh-cn">简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- Cookie -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.min.js"></script>
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+</body>
+</html>

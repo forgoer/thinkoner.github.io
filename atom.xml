@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>ThinkGo</title>
+  
+  <subtitle>A fast, simple &amp; powerful web framework written in Go (Golang).</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://thinkoner.github.io/"/>
+  <updated>2019-02-18T08:06:58.941Z</updated>
+  <id>https://thinkoner.github.io/</id>
+  
+  <author>
+    <name>TechLee</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ThinkGo 0.1.1 Released</title>
+    <link href="https://thinkoner.github.io/news/2019/01/28/thinkgo-0-1-1-released/"/>
+    <id>https://thinkoner.github.io/news/2019/01/28/thinkgo-0-1-1-released/</id>
+    <published>2019-01-28T00:00:00.000Z</published>
+    <updated>2019-02-18T08:06:58.941Z</updated>
+    
+    <content type="html"><![CDATA[<p><code>ThinkGo</code> is a lightweight MVC framework written in Go (Golang).</p><h2 id="New-Features"><a href="#New-Features" class="headerlink" title="New Features"></a>New Features</h2><h3 id="Cache"><a href="#Cache" class="headerlink" title="Cache"></a>Cache</h3><ul><li>a cache library，it currently supports redis, memory, and can customize the store adapter.</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;code&gt;ThinkGo&lt;/code&gt; is a lightweight MVC framework written in Go (Golang).&lt;/p&gt;
+&lt;h2 id=&quot;New-Features&quot;&gt;&lt;a href=&quot;#New-Features&quot; class=&quot;head
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ThinkGo 0.1 Released</title>
+    <link href="https://thinkoner.github.io/news/2019/01/22/thinkgo-0-1-released/"/>
+    <id>https://thinkoner.github.io/news/2019/01/22/thinkgo-0-1-released/</id>
+    <published>2019-01-22T00:00:00.000Z</published>
+    <updated>2019-02-18T08:06:18.909Z</updated>
+    
+    <content type="html"><![CDATA[<p><code>ThinkGo</code> is a lightweight MVC framework written in Go (Golang).</p><h2 id="New-Features"><a href="#New-Features" class="headerlink" title="New Features"></a>New Features</h2><h3 id="Route-Prefixes-and-Groups"><a href="#Route-Prefixes-and-Groups" class="headerlink" title="Route Prefixes and Groups"></a>Route Prefixes and Groups</h3><ul><li>Route Prefixes: The prefix method may be used to prefix each route in the group with a given URI</li><li>Route Groups:  Allow you to share route attributes, such as Middleware or Prefixes</li></ul><h3 id="Middlewares"><a href="#Middlewares" class="headerlink" title="Middlewares"></a>Middlewares</h3><ul><li>Middleware provide a convenient mechanism for filtering HTTP requests entering your application</li></ul><h2 id="Improvement"><a href="#Improvement" class="headerlink" title="Improvement"></a>Improvement</h2><p><code>thinkgo.Response</code> is adjusted to <code>context.Response</code></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;code&gt;ThinkGo&lt;/code&gt; is a lightweight MVC framework written in Go (Golang).&lt;/p&gt;
+&lt;h2 id=&quot;New-Features&quot;&gt;&lt;a href=&quot;#New-Features&quot; class=&quot;head
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ThinkGo 0.0.2 Released</title>
+    <link href="https://thinkoner.github.io/news/2019/01/17/thinkgo-0-0-2-released/"/>
+    <id>https://thinkoner.github.io/news/2019/01/17/thinkgo-0-0-2-released/</id>
+    <published>2019-01-17T00:00:00.000Z</published>
+    <updated>2019-02-18T08:05:26.046Z</updated>
+    
+    <content type="html"><![CDATA[<p><code>ThinkGo</code> is a lightweight MVC framework written in Go (Golang).</p><h1 id="New-Features"><a href="#New-Features" class="headerlink" title="New Features"></a>New Features</h1><h2 id="Logging"><a href="#Logging" class="headerlink" title="Logging"></a>Logging</h2><ul><li>Support <code>log</code>，can be output in the <code>terminal</code></li></ul><h2 id="Bug-Fix"><a href="#Bug-Fix" class="headerlink" title="Bug Fix"></a>Bug Fix</h2><ul><li>Content-Type header is not set according to context.Response</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;code&gt;ThinkGo&lt;/code&gt; is a lightweight MVC framework written in Go (Golang).&lt;/p&gt;
+&lt;h1 id=&quot;New-Features&quot;&gt;&lt;a href=&quot;#New-Features&quot; class=&quot;head
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ThinkGo 0.0.1 Released</title>
+    <link href="https://thinkoner.github.io/news/2018/12/25/thinkgo-0-0-1-released/"/>
+    <id>https://thinkoner.github.io/news/2018/12/25/thinkgo-0-0-1-released/</id>
+    <published>2018-12-25T00:00:00.000Z</published>
+    <updated>2019-02-18T08:03:54.670Z</updated>
+    
+    <content type="html"><![CDATA[<p><code>ThinkGo</code> is a lightweight MVC framework written in Go (Golang).</p><p>The first release of ThinkGo：</p><ul><li>Routing</li><li>Controller</li><li>Request</li><li>Response</li><li>View</li><li>HTTP Session</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;code&gt;ThinkGo&lt;/code&gt; is a lightweight MVC framework written in Go (Golang).&lt;/p&gt;
+&lt;p&gt;The first release of ThinkGo：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Routing&lt;/li
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
